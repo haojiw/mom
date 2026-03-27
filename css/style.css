@@ -13,7 +13,7 @@
 
   --header-h:   64px;
   --strip-h:    62px;
-  --caption-h:  112px;
+  --caption-h:  98px;
   /* Viewfinder assembly fills the rest via flex */
 
   --font-ui:    'Inter', sans-serif;
@@ -462,8 +462,8 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  line-height: 1.5;
-  padding: 16px 20px;
+  line-height: 1.42;
+  padding: 12px 18px;
 }
 
 @media (max-width: 480px) {
@@ -514,7 +514,7 @@ body {
   #caption-screen { border-radius: 15px; }
   #caption-text {
     font-size: 15px;
-    padding: 14px 16px;
+    padding: 10px 14px;
   }
 
   .plate-btn { width: 32px; height: 32px; }

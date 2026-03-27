@@ -20,7 +20,7 @@ const sections = [
       { src: 'photos/1.3.jpg', caption: '妈妈的快乐常常很简单' },
       { src: 'photos/1.4.jpg', fit: 'contain', caption: '约书亚国家公园，与仙人掌亲密接触' },
       { src: 'photos/1.5.jpg', caption: '喜欢看妈妈像花一样绽放的笑容' },
-      { src: 'photos/1.6.JPG', caption: '每年母亲节，我和妈妈的约定' },
+      { src: 'photos/1.6.jpg', caption: '每年母亲节，我和妈妈的约定' },
       { src: 'photos/1.7.jpg', caption: '永远年轻！' },
     ],
   },
