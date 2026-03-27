@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Mom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,600&family=Playfair+Display:ital,wght@1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="shutter-flash"></div>
+  <audio id="bg-music" src="tmmdh.mp3" preload="auto" loop></audio>
+
+  <div id="app">
+
+    <!-- ── Top plate ───────────────────────────────────────────── -->
+    <header id="top-plate">
+      <button class="plate-btn" id="btn-prev" aria-label="Previous">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+
+      <div class="plate-center">
+        <button class="plate-btn" id="btn-mute" aria-label="Mute music" aria-pressed="false">
+          <svg class="icon-volume-on" viewBox="0 0 24 24">
+            <path d="M5 9v6h4l5 4V5L9 9H5z"/>
+            <path d="M18 9.5a4.5 4.5 0 0 1 0 5"/>
+          </svg>
+          <svg class="icon-volume-off" viewBox="0 0 24 24">
+            <path d="M5 9v6h4l5 4V5L9 9H5z"/>
+            <line x1="17" y1="9" x2="22" y2="14"/>
+            <line x1="22" y1="9" x2="17" y2="14"/>
+          </svg>
+        </button>
+
+        <span class="engraved-title">For Mom</span>
+      </div>
+
+      <div class="plate-actions">
+        <button class="plate-btn" id="btn-next" aria-label="Next">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- ── Viewfinder ──────────────────────────────────────────── -->
+    <div id="viewfinder-assembly">
+      <div class="viewfinder-bezel">
+        <!-- viewfinder-glass / slideshow — slides + HUD injected by JS -->
+        <div id="slideshow"></div>
+      </div>
+    </div>
+
+    <!-- ── Caption display ────────────────────────────────────── -->
+    <div id="caption-bar">
+      <div id="caption-screen">
+        <span id="caption-text"></span>
+      </div>
+    </div>
+
+    <!-- ── Film strip ──────────────────────────────────────────── -->
+    <div id="film-strip-bar">
+      <div id="film-strip-inner"></div>
+    </div>
+
+  </div><!-- /app -->
+
+  <script src="js/main.js"></script>
+</body>
+</html>
