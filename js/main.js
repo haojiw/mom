@@ -45,7 +45,7 @@ const sections = [
       { src: 'photos/3.3.JPG', caption: '我度过了很幸福的童年' },
       { src: 'photos/3.4.jpg', caption: '学做泰国菜！妈妈做饭一直很好吃' },
       { src: 'photos/3.5.jpg', caption: '最喜欢一家人出去旅游' },
-      { src: 'photos/3.6.JPG', caption: '还记得这是什么时候吗' },
+      { src: 'photos/3.6.jpg', caption: '还记得这是什么时候吗' },
       { src: 'photos/3.7.JPG', caption: '去年出发前去的温州肯恩大学' },
       { src: 'photos/3.8.jpg', caption: '每年都能拍好几张全家福' },
     ],
