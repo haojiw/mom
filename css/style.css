@@ -20,6 +20,8 @@
   --font-title: 'Cormorant Garamond', serif;
   --font-body:  'Playfair Display', serif;
   --font-mono:  'JetBrains Mono', monospace;
+  --font-cjk-serif: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+  --font-cjk-sans: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
 }
 
 /* ─── Reset ─────────────────────────────────────────────────────── */
@@ -135,13 +137,13 @@ body {
 
 /* Engraved title — from inspo .engraved-text */
 .engraved-title {
-  font-family: var(--font-title);
-  font-style: italic;
-  font-size: 18px;
+  font-family: var(--font-cjk-serif);
+  font-style: normal;
+  font-size: 17px;
   font-weight: 600;
   color: var(--engrave);
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
-  letter-spacing: 0.03em;
+  letter-spacing: 0.08em;
 }
 
 .plate-actions {
@@ -234,7 +236,7 @@ body {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 420ms ease;
+  transition: opacity 620ms ease-in-out;
   pointer-events: none;
 }
 .slide.active {
@@ -277,9 +279,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 48px 40px;
-  /* transparent — dark viewfinder glass shows through */
-  background: transparent;
+  padding: 32px 28px;
+  background: url('../paper.jpg') center / cover no-repeat;
 }
 
 .text-frame {
@@ -288,11 +289,11 @@ body {
   width: 100%;
 }
 
-/* Corner brackets in amber to match HUD */
+/* Corner brackets — muted warm sepia */
 .text-corner {
   position: absolute;
-  width: 20px; height: 20px;
-  border-color: rgba(255, 157, 0, 0.55);
+  width: 18px; height: 18px;
+  border-color: rgba(100, 72, 44, 0.28);
   border-style: solid;
   pointer-events: none;
 }
@@ -302,39 +303,38 @@ body {
 .text-corner.bl { bottom: 0; left: 0;  border-width: 0 0 1px 1px; }
 
 .text-inner {
-  padding: 40px 36px;
-  text-align: center;
+  padding: 36px 32px;
+  text-align: left;
 }
 
 .text-ornament {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 28px;
+  gap: 12px;
+  margin-bottom: 22px;
 }
-.text-ornament.bottom { margin-bottom: 0; margin-top: 28px; }
+.text-ornament.bottom { margin-bottom: 0; margin-top: 22px; }
 .text-ornament-line {
   flex: 1;
   height: 1px;
-  background: rgba(255, 157, 0, 0.25);
+  background: rgba(100, 72, 44, 0.18);
 }
 .text-ornament-diamond {
   flex: none;
   width: 4px; height: 4px;
-  background: var(--hud-amber);
+  background: rgba(140, 95, 50, 0.50);
   transform: rotate(45deg);
-  opacity: 0.6;
 }
 
 .text-body {
-  font-family: var(--font-body);
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(19px, 2.5vw, 28px);
-  line-height: 1.80;
-  color: rgba(240, 232, 210, 0.92);
-  letter-spacing: 0.01em;
-  text-shadow: 0 0 40px rgba(255, 200, 100, 0.12);
+  font-family: var(--font-cjk-serif);
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(15px, 2.05vw, 20px);
+  line-height: 1.92;
+  color: #3a2718;
+  letter-spacing: 0.03em;
+  white-space: pre-line;
 }
 
 /* ─── Film strip ─────────────────────────────────────────────────── */
@@ -448,11 +448,11 @@ body {
   box-shadow:
     inset 3px 3px 7px rgba(0, 0, 0, 0.12),
     inset -3px -3px 7px rgba(255, 255, 255, 0.72);
-  font-family: var(--font-body);
-  font-size: 18px;
+  font-family: var(--font-cjk-serif);
+  font-size: 17px;
   font-weight: 400;
   color: var(--engrave);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
   white-space: normal;
   overflow: hidden;
   text-overflow: unset;
@@ -490,11 +490,11 @@ body {
   z-index: 999;
 }
 #shutter-flash.flash-active {
-  animation: shutter-flash 220ms ease forwards;
+  animation: shutter-flash 320ms ease-out forwards;
 }
 @keyframes shutter-flash {
   0%   { opacity: 0;    }
-  18%  { opacity: 0.42; }
+  22%  { opacity: 0.12; }
   100% { opacity: 0;    }
 }
 
@@ -504,19 +504,19 @@ body {
   .viewfinder-bezel    { border-radius: 14px; }
   #slideshow           { border-radius: 8px;  }
 
-  .text-body  { font-size: clamp(17px, 4.8vw, 24px); }
-  .text-inner { padding: 32px 24px; }
-  .slide-text { padding: 36px 20px; }
+  .text-body  { font-size: clamp(14px, 4.3vw, 18px); }
+  .text-inner { padding: 28px 20px; }
+  .slide-text { padding: 24px 16px; }
   #caption-bar {
     margin-top: -10px;
     padding: 0 10px 18px;
   }
   #caption-screen { border-radius: 15px; }
   #caption-text {
-    font-size: 16px;
+    font-size: 15px;
     padding: 14px 16px;
   }
 
   .plate-btn { width: 32px; height: 32px; }
-  .engraved-title { font-size: 16px; }
+  .engraved-title { font-size: 15px; }
 }

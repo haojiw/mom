@@ -8,49 +8,53 @@
 
 const sections = [
   {
-    photos: ['photos/0.jpg'],
-  },
-  {
-    text: 'A little more from this chapter.',
     photos: [
-      'photos/1.1.jpg',
-      'photos/1.2.JPG',
-      'photos/1.3.jpg',
-      { src: 'photos/1.4.jpg', fit: 'contain' },
-      'photos/1.5.PNG',
-      'photos/1.6.JPG',
-      'photos/1.7.jpg',
+      { src: 'photos/0.jpg', caption: '献给妈妈的生日礼物' },
     ],
   },
   {
-    text: 'And then into the next set of memories.',
+    text: '生日快乐，妈妈！\n\n今年我们都长大了一岁，我想给你一些不一样的惊喜。\n\n来看看儿子记忆里，我们一起走过的点点滴滴 :)',
     photos: [
-      'photos/2.1.JPG',
-      'photos/2.2.jpg',
-      'photos/2.3.jpg',
-      'photos/2.4.jpg',
-      { src: 'photos/2.5.jpg', fit: 'contain' },
-      'photos/2.6.jpg',
-      'photos/2.7.jpg',
-      'photos/2.8.JPG',
+      { src: 'photos/1.2.JPG', caption: '朋友都说我长得像妈妈' },
+      { src: 'photos/1.1.jpg', caption: '在美国大街上，戴着眼镜随手自拍' },
+      { src: 'photos/1.3.jpg', caption: '妈妈的快乐常常很简单' },
+      { src: 'photos/1.4.jpg', fit: 'contain', caption: '约书亚国家公园，被仙人掌扎了' },
+      { src: 'photos/1.5.PNG', caption: '喜欢看妈妈像花一样绽放的笑容' },
+      { src: 'photos/1.6.JPG', caption: '每年母亲节，我和妈妈的约定' },
+      { src: 'photos/1.7.jpg', caption: '永远年轻！' },
     ],
   },
   {
-    text: 'A few more favorites to end on.',
+    text: '这一次你们千里迢迢来到美国看我，与我一起度过了两个多星期温暖又幸福的时光。\n\n每一年和你们相聚的日子，都会带给我很多力量，也总会让我重新想起生活里最珍贵的美好。',
     photos: [
-      'photos/3.1.JPG',
-      'photos/3.2.PNG',
-      'photos/3.3.JPG',
-      'photos/3.4.jpg',
-      'photos/3.5.jpg',
-      'photos/3.6.JPG',
-      'photos/3.7.JPG',
-      'photos/3.8.PNG',
+      { src: 'photos/2.1.JPG', caption: '在UCLA拍张合影' },
+      { src: 'photos/2.2.jpg', caption: '摩天轮上看大海' },
+      { src: 'photos/2.3.jpg', caption: '一家人来看比赛' },
+      { src: 'photos/2.4.jpg', caption: '整个洛杉矶尽收眼底' },
+      { src: 'photos/2.5.jpg', fit: 'contain', caption: '偷拍一张吃饭' },
+      { src: 'photos/2.6.jpg', caption: '父母爱情，非常甜蜜' },
+      { src: 'photos/2.7.jpg', caption: '去年回家时，我感到很温暖的一幕' },
+      { src: 'photos/2.8.JPG', caption: '情人节的晚上，最漂亮的天空' },
     ],
   },
   {
-    text: 'One last slide, just for you.',
-    photos: ['photos/closing.JPG'],
+    text: '翻看这些照片的时候，仿佛又一次走进了岁月的长廊，许多过去的时光都在眼前慢慢亮起来。\n\n我相信，接下来的日子里，我们一定还会一起创造更多美好的回忆！',
+    photos: [
+      { src: 'photos/3.1.JPG', caption: '快十年以前了！我长大了，妈妈没怎么变' },
+      { src: 'photos/3.2.PNG', caption: '其乐融融的一家人' },
+      { src: 'photos/3.3.JPG', caption: '我度过了很幸福的童年' },
+      { src: 'photos/3.4.jpg', caption: '学做泰国菜！妈妈做饭一直很好吃' },
+      { src: 'photos/3.5.jpg', caption: '最喜欢一家人出去旅游' },
+      { src: 'photos/3.6.JPG', caption: '还记得这是什么时候吗' },
+      { src: 'photos/3.7.JPG', caption: '去年出发前去的温州肯恩大学' },
+      { src: 'photos/3.8.PNG', caption: '每年都能拍好几张全家福' },
+    ],
+  },
+  {
+    text: '在我心里，妈妈一直都是最漂亮的！\n\n你会永远年轻，笑容常驻\n\n祝妈妈生日快乐！\n\n -- 爱你的儿子',
+    photos: [
+      { src: 'photos/closing.JPG', caption: '生日快乐，妈妈！' },
+    ],
   },
 ];
 
@@ -59,7 +63,7 @@ const slides = sections.flatMap((section, sectionIndex) => {
     type: 'photo',
     src: typeof photo === 'string' ? photo : photo.src,
     fit: typeof photo === 'string' ? 'cover' : (photo.fit || 'cover'),
-    caption: '',
+    caption: typeof photo === 'string' ? '' : (photo.caption || ''),
   }));
 
   if (sectionIndex === 0) return sectionSlides;
@@ -74,8 +78,8 @@ const slides = sections.flatMap((section, sectionIndex) => {
 });
 
 // ─── Constants ──────────────────────────────────────────────────
-const FADE_MS  = 420;
-const FLASH_MS = 220;
+const FADE_MS  = 620;
+const FLASH_MS = 320;
 const SWIPE_PX = 45;
 
 // ─── DOM References ─────────────────────────────────────────────
